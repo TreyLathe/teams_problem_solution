@@ -1,47 +1,74 @@
-// Function to form teams based on student preferences
 function formTeams(students) {
-    const teamCount = 5; // 5 teams
-    const teamSizes = [4, 3, 3, 3, 3]; // Team sizes, with one team having 4 members
-    const teams = Array.from({ length: teamCount }, () => []);
-  
-    // Helper function to find the next available team index
-    function findNextAvailableTeam() {
+  const teamCount = 4; // 4 teams
+  const teamSizes = [4, 4, 4, 4]; // Team sizes, with one team having 4 members
+  const teams = Array.from({ length: teamCount }, () => []);
+
+  // Helper function to find the next available team index
+  function findNextAvailableTeam() {
       for (let i = 0; i < teamCount; i++) {
-        if (teams[i].length < teamSizes[i]) {
-          return i;
-        }
+          if (teams[i].length < teamSizes[i]) {
+              return i;
+          }
       }
       return -1; // No available team found
-    }
-  
-    // Shuffle the students randomly to break ties
-    students.sort(() => Math.random() - 0.5);
-  
-    // Iterate through students' preferences
-    for (const student of students) {
+  }
+
+  // Shuffle the students randomly to break ties
+  students.sort(() => Math.random() - 0.5);
+
+  // Create a map to keep track of students who have been assigned
+  const assignedStudents = new Set();
+
+  // Iterate through students' preferences to assign mutually preferred students
+  for (const student of students) {
+      if (assignedStudents.has(student.name)) {
+          // This student has already been assigned to a team, skip to the next student
+          continue;
+      }
+
       let preferenceIndex = 0;
       let assigned = false;
-  
+
       while (!assigned && preferenceIndex < student.preferences.length) {
-        const preferredStudentName = student.preferences[preferenceIndex];
-        const preferredStudent = students.find((s) => s.name === preferredStudentName);
-  
-        if (preferredStudent) {
-          const teamIndex = findNextAvailableTeam();
-  
-          if (teamIndex !== -1) {
-            teams[teamIndex].push(student);
-            assigned = true;
+          const preferredStudentName = student.preferences[preferenceIndex];
+          const preferredStudent = students.find((s) => s.name === preferredStudentName);
+
+          if (preferredStudent && !assignedStudents.has(preferredStudentName)) {
+              const teamIndex = findNextAvailableTeam();
+
+              if (teamIndex !== -1) {
+                  teams[teamIndex].push(student);
+                  teams[teamIndex].push(preferredStudent);
+                  assignedStudents.add(student.name);
+                  assignedStudents.add(preferredStudentName);
+                  assigned = true;
+              }
           }
-        }
-  
-        preferenceIndex++;
+
+          preferenceIndex++;
       }
-    }
-  
-    return teams;
   }
-  
+
+  // Now, let's assign the remaining unassigned students to the remaining teams
+  const remainingStudents = students.filter((student) => !assignedStudents.has(student.name));
+  let remainingTeamIndex = 0;
+
+  for (const student of remainingStudents) {
+      const teamIndex = findNextAvailableTeam();
+
+      if (teamIndex !== -1) {
+          teams[teamIndex].push(student);
+          assignedStudents.add(student.name);
+      } else {
+          // All teams are full, break the loop
+          break;
+      }
+  }
+
+  return teams;
+}
+
+
   // Array of student names and their preferences
   const students = [
     {
