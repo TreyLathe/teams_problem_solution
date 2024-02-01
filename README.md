@@ -35,6 +35,7 @@ This is run through the command line. Make sure node is installed in the directo
 -  create container arrays for students and student preferences
     - interface input for instructor to fill in array for students in class
     - interface for students to select themselves and fill in preferences in array
+- add ability to instructor or student to forbid specific combinations
 - interface for instructor to choose number of teams and number in each team
 - improved algorithm for optimizing choices
 
