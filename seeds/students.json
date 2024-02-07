@@ -1,0 +1,70 @@
+
+    [
+       { "firstname": "Luke",
+        "lastname": "Skywalker"
+        },
+
+        { "firstname": "Leia",
+        "lastname": "Organa"
+        },
+
+        { "firstname": "Han",
+        "lastname": "Solo"
+        },
+
+        { "firstname": "Master",
+        "lastname": "Yoda"
+        },
+
+        { "firstname": "Obiwan",
+        "lastname": "Kenobi"
+        },
+
+        { "firstname": "R2",
+        "lastname": "D2"
+        },
+
+        { "firstname": "CP",
+        "lastname": "3O"
+        },
+
+        { "firstname": "Wicket",
+        "lastname": "Wicket"
+        },
+
+        { "firstname": "Chew",
+        "lastname": "Bacca"
+        },
+
+        { "firstname": "Admiral",
+        "lastname": "Akbar"
+        },
+
+        { "firstname": "Darth",
+        "lastname": "Vader"
+        },
+
+        { "firstname": "Mon",
+        "lastname": "Mothma"
+        },
+
+        { "firstname": "Lando",
+        "lastname": "Calrissian"
+        },
+
+        { "firstname": "Boba",
+        "lastname": "Fett"
+        },
+
+        { "firstname": "Jabbathe",
+        "lastname": "Hutt"
+        },
+
+        { "firstname": "Jek",
+        "lastname": "Porkins"
+        }
+
+    ]
+    
+  
+   
