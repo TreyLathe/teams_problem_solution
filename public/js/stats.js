@@ -1,4 +1,4 @@
-const { formTeams, students } = require('./server'); // Assuming formTeams is exported from server.js
+const { formTeams, students } = require('../../server'); // Assuming formTeams is exported from server.js
 
 // Initialize a map to store the count of times each pair of students is on the same team
 const pairCounts = new Map();
