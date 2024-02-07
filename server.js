@@ -1,7 +1,17 @@
+//changes to make. Database with tables of classes, students and preferences.
+//formteams function will be called from class database, class
+//the instructor chooses, which will give the list
+//of (and number) students  and from there map their preferences.
+//Change function to divide students (as equally as possible)  into a number of teams
+//the instructor inputs
+// students put in preference 1-5 of the students they want to work with and this goes
+//to the database table of preferences.
+
 // Function to form teams based on student preferences
 function formTeams(students) {
   const teamCount = 4; // 4 teams
-  const teamSizes = [4, 4, 4, 4]; // Team sizes, with one team having 4 members
+  const teamSizes = [4, 4, 4, 4]; // Team sizes, move this to a function that divides classes equally into
+  //number of teams the instructor has chosen.
   const teams = Array.from({ length: teamCount }, () => []);
 
   // Helper function to find the next available team index
@@ -37,7 +47,9 @@ function formTeams(students) {
       // Get the name of the preferred student at the current preference index
       const preferredStudentName = topThreePreferences[preferenceIndex];
       // Find the preferred student object from the students array
-      const preferredStudent = students.find((s) => s.name === preferredStudentName);
+      const preferredStudent = students.find(
+        (s) => s.name === preferredStudentName
+      );
 
       // Check if there is a preferred student and the preferred student has not been assigned yet
       if (preferredStudent && !assignedStudents.has(preferredStudentName)) {
@@ -83,7 +95,7 @@ function formTeams(students) {
   return teams;
 }
 
-// Array of student names and their preferences
+// Array of student names and their preferences. move this to the database
 const students = [
   {
     name: "Luke Skywalker",
@@ -92,16 +104,12 @@ const students = [
       "Leia Organa",
       "Han Solo",
       "Obiwan Kenobi",
-      "R2D2",],
+      "R2D2",
+    ],
   },
   {
     name: "Leia Organa",
-    preferences: [
-      "Han Solo", 
-      "C3PO", 
-      "Wicket", 
-      "Luke Skywalker", 
-      "Chewbacca"],
+    preferences: ["Han Solo", "C3PO", "Wicket", "Luke Skywalker", "Chewbacca"],
   },
   {
     name: "Han Solo",
@@ -145,7 +153,12 @@ const students = [
   },
   {
     name: "c3po",
-    preferences: ["r2d2", "Luke Skywalker", "Han Solo", "Wicket", "Chewbacca"],
+    preferences: 
+    ["r2d2", 
+    "Luke Skywalker", 
+    "Han Solo", 
+    "Wicket", 
+    "Chewbacca"],
   },
   {
     name: "Wicket",
@@ -253,5 +266,5 @@ for (let i = 0; i < teams.length; i++) {
 // Export the formTeams and students  for testing
 module.exports = {
   formTeams,
-  students
+  students,
 };

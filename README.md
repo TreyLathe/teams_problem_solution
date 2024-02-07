@@ -20,23 +20,25 @@ As an instructor, I would like to divide my students up into teams using their p
 ## RELEVANT LINKS:
 - Repository: https://github.com/TreyLathe/teams_problem_solution
 
-- Deployed Site:  N/A
+- Deployed Site:  
 
 ## SCREENSHOTS &&/|| SCREENCASTS:
 
 
 ## USAGE && COMMENTS:
-This algorithm, as of 30 Jan 2024, creates four teams of four students. Each student picks their five top preferences for other students to be on their team. The code first finds all students that have each other as their number one preference. It then picks a student randomly to begin iterating through their preferences until all students have been placed in teams as close to their top choices as possible. This occasionally leaves one or two students without a team, so the algorithm then places those students in the remaining open team. 
+This algorithm, as of 4 feb 2024, creates four teams of four students. Each student picks their five top preferences for other students to be on their team. The code first finds all students that have each other as their number one preference. It then picks a student randomly to begin iterating through their top 3 preferences, then the other preferences next,  until all students have been placed in teams as close to their top choices as possible. This occasionally leaves one or two students without a team, so the algorithm then places those students in the remaining open team(s). 
 
 This is run through the command line. Make sure node is installed in the directory with server.js and when you are in your directory where server.js resides, in the command line type "node server.js"
 
 ## FUTURE DIRECTIONS AND CONTRIBUTING
 
 -  create container arrays for students and student preferences
-    - interface input for instructor to fill in array for students in class
+    - Create a table of classes
+        -
+    - interface input for instructor to fill in table for students with classes student is in
     - interface for students to select themselves and fill in preferences in array
 - add ability to instructor or student to forbid specific combinations
-- interface for instructor to choose number of teams and number in each team
+- interface for instructor to choose number of teams and number in each team 
 - improved algorithm for optimizing choices
 
 If wish to contribute, request to be a contributor, clone repository and create a branch for one of the features above, once a pull request is made, it will be tested.
