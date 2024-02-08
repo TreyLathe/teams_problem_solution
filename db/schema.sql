@@ -1,2 +1,2 @@
-DROP DATABASE IF EXITS studendt_team_selector_db;
-CREATE DATABASE studendt_team_selector_db;
+DROP DATABASE IF EXITS student_team_selector_db;
+CREATE DATABASE student_team_selector_db;
