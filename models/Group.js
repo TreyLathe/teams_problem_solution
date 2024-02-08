@@ -5,11 +5,10 @@ class Group extends Model {}
 
 Group.init(
   {
-    id: {
+    group_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: false,
     },
     group_name: {
         type: DataTypes.STRING,
@@ -24,14 +23,14 @@ Group.init(
     student_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Student',
+        model: 'student',
         key: 'id',
       },
     },
-    class_id: {
+    course_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'Class',
+          model: 'course',
           key: 'id',
         },
       
@@ -42,8 +41,8 @@ Group.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'group',
   }
 );
 
-module.exports = Project;
+module.exports = Group;
