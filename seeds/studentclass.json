@@ -1,75 +1,27 @@
 [
     {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
-    }, 
-    
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
+        "student_id": 1,
+        "course_id": 2, 
+        "preference1_id": "",
+        "preference2_id": "",
+        "preference3_id": ""
     }, 
 
     {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
-    },
+        "student_id": "",
+        "course_id": "", 
+        "preference1_id": "",
+        "preference2_id": "",
+        "preference3_id": ""
+    }, 
 
     {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
-    },
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
-    },
-
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
-    },
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
-    },
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
-    },
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "preference1": "",
-        "preference2": "",
-        "preference3": ""
+        "student_id": "",
+        "course_id": "", 
+        "preference1_id": "",
+        "preference2_id": "",
+        "preference3_id": ""
     }
+    
 
 ]

@@ -26,8 +26,8 @@ Student.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'student',
   }
 );
 
-module.exports = Project;
+module.exports = Student;

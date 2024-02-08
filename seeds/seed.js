@@ -1,5 +1,5 @@
 const sequelize = require('./config/connection');
-const Class = require('../models/Class');
+const Class = require('../models/Course');
 const Student = require('../models/Student')
 const Group = require('../models/Group');
 const StudentClass = require('../models/StudentClass');

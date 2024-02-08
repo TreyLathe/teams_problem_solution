@@ -1,49 +1,21 @@
 [
     {
-        "StudentID": "",
-        "ClassID": "", 
+        "student_id": "",
+        "course_id": "", 
         "Group": "",
         "Project": ""
     }, 
 
     {
-        "StudentID": "",
-        "ClassID": "", 
+        "student_id": "",
+        "course_id": "", 
         "Group": "",
         "Project": ""
     }, 
 
     {
-        "StudentID": "",
-        "ClassID": "", 
-        "Group": "",
-        "Project": ""
-    }, 
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "Group": "",
-        "Project": ""
-    }, 
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "Group": "",
-        "Project": ""
-    }, 
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
-        "Group": "",
-        "Project": ""
-    }, 
-
-    {
-        "StudentID": "",
-        "ClassID": "", 
+        "student_id": "",
+        "course_id": "", 
         "Group": "",
         "Project": ""
     }

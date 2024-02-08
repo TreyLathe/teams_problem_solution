@@ -11,12 +11,12 @@ Group.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    group: {
+    group_name: {
         type: DataTypes.STRING,
         allowNull: false,
         autoIncrement: false,
       },
-    project: {
+    project_name: {
         type: DataTypes.STRING,
         allowNull: false,
         autoIncrement: false,
