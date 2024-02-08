@@ -1,4 +1,11 @@
 .DS_store
+
 env
+
+
 node_modules/
 students.erd
+
+
+homeRoutes.js
+profile
