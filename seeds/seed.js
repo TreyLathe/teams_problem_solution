@@ -5,7 +5,7 @@ const Group = require('../models/Group');
 const StudentClass = require('../models/StudentClass');
 
 const studentData = require('./students.json');
-const classData = require('./class.json');
+const classData = require('./course.json');
 const groupData = require('./group.json');
 const scData = require ('./studentclass.json');
 
