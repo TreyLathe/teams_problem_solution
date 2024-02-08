@@ -25,6 +25,7 @@ As an instructor, I would like to divide my students up into teams using their p
 ## SCREENSHOTS &&/|| SCREENCASTS:
 
 
+
 ## USAGE && COMMENTS:
 This algorithm, as of 4 feb 2024, creates four teams of four students. Each student picks their five top preferences for other students to be on their team. The code first finds all students that have each other as their number one preference. It then picks a student randomly to begin iterating through their top 3 preferences, then the other preferences next,  until all students have been placed in teams as close to their top choices as possible. This occasionally leaves one or two students without a team, so the algorithm then places those students in the remaining open team(s). 
 

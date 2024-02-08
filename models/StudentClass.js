@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class StudentClass extends Model {}
 
-StudentClass.init(
+studentclass.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -27,24 +27,24 @@ StudentClass.init(
       },
     preference1_id: {
         type: DataTypes.INTEGER,
-        references: {
-          model: 'Student',
-          key: 'id',
-        },
+        // references: {
+        //   model: 'Student',
+        //   key: 'id',
+        // },
       },
       preference2_id: {
         type: DataTypes.INTEGER,
-        references: {
-          model: 'Student',
-          key: 'id',
-        },
+        // references: {
+        //   model: 'Student',
+        //   key: 'id',
+        // },
       },
       preference3_id: {
         type: DataTypes.INTEGER,
-        references: {
-          model: 'Student',
-          key: 'id',
-        },
+        // references: {
+        //   model: 'Student',
+        //   key: 'id',
+        // },
       },
   },
   {
