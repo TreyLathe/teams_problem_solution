@@ -2,6 +2,7 @@ const Student = require('./Student');
 const Course = require('./Course');
 const Group = require('./Group');
 const StudentCourse = require('./StudentCourse');
+const User = require('./User');
 
 Student.hasOne(Group, {
     foreignKey: 'student_id',
@@ -31,5 +32,5 @@ StudentCourse.belongsTo(Course, {
 
 
 
-module.exports = { Student, Course, Group, StudentCourse };
+module.exports = { Student, Course, Group, StudentCourse, User };
 
