@@ -8,10 +8,10 @@
 //to the database table of preferences.
 
 // Function to form teams based on student preferences
-function formTeams(students) {
-    const teamCount = 4; // 4 teams
-    const teamSizes = [4, 4, 4, 4]; // Team sizes, move this to a function that divides classes equally into
-    //number of teams the instructor has chosen.
+async function formTeams(students) {
+    // const teamCount = 4; // 4 teams  //number of teams the instructor has chosen.
+    // const teamSizes = [4, 4, 4, 4]; // Team sizes, move this to a function that divides classes equally into
+    const students = await db.query('SELECT * FROM students');
     const teams = Array.from({ length: teamCount }, () => []);
   
     // Helper function to find the next available team index
@@ -96,162 +96,162 @@ function formTeams(students) {
   }
   // 
   // Array of student names and their preferences. move this to the database
-  const students = [
-    {
-      //1
-      name: "Luke Skywalker",
-      preferences: [
-        "Master Yoda", //4
-        "Leia Organa",//2
-        "Han Solo",//3
-        "Obiwan Kenobi",//5
-        "R2D2",//6
-      ],
-    },
-    { //2
-      name: "Leia Organa",
-      preferences: ["Han Solo", "C3PO", "Wicket", "Luke Skywalker", "Chewbacca"],
-    },
-    { //3
-      name: "Han Solo",
-      preferences: [
-        "Chewbacca",//9
-        "Leia Organa",//2
-        "Luke Skywalker",//1
-        "Lando Calrissian",//13
-        "Jek Porkins",//16
-      ],
-    },
-    { //4
-      name: "Master Yoda",
-      preferences: [
-        "Luke Skywalker",//1
-        "Obiwan Kenobi",//5
-        "Leia Organa",//2
-        "Mon Mothma",//12
-        "Wicket",//8
-      ],
-    },
-    {   //5
-      name: "ObiWan Kenobi",
-      preferences: [
-        "Luke Skywalker",//1
-        "Master Yoda",//4
-        "Leia Organa",//2
-        "r2d2",//6
-        "Admiral Ackbar",//10
-      ],
-    },
-    { //6
-      name: "r2d2",
-      preferences: [
-        "c3po",//7
-        "Luke Skywalker",//1
-        "Leia Organa",//2
-        "Han Solo",//3
-        "Master Yoda",//4
-      ],
-    },
-    { //7
-      name: "c3po",
-      preferences: 
-      ["r2d2", //6
-      "Luke Skywalker", //1
-      "Han Solo", //3
-      "Wicket", //8
-      "Chewbacca"],//9
-    },
-    { //8
-      name: "Wicket",
-      preferences: [
-        "Chewbacca",//9
-        "Leia Organa",//2
-        "Luke Skywalker",//1
-        "Han Solo",//3
-        "r2d2",// 6
-      ],
-    },
-    {   //9
-      name: "Chewbacca",
-      preferences: [
-        "Han Solo",//3
-        "Luke Skywalker",//1
-        "Leia Organa",//  2
-        "c3po",// 7
-        "Wicket",//8
-      ],
-    },
-    { //10
-      name: "Admiral Ackbar",
-      preferences: [
-        "Mon Mothma",//12
-        "Leia Organa",//2
-        "Luke Skywalker",//1
-        "Han Solo",//3
-        "Master Yoda",//  4
-      ],
-    },
-    { //11
-      name: "Darth Vader",
-      preferences: [
-        "Luke Skywalker",//1
-        "Leia Organa",//2
-        "Master Yoda",//4
-        "Mon Mothma",//12
-        "Admiral Ackbar",// 10
-      ],
-    },
-    { //12
-      name: "Mon Mothma",
-      preferences: [
-        "Admiral Ackbar",//10
-        "Leia Organa",//2
-        "Master Yoda",//4
-        "Obiwan Kenobi",  //5
-        "c3po",//7
-      ],
-    },
-    { //13
-      name: "Lando Calrissian",
-      preferences: [
-        "Han Solo",//3
-        "Chewbacca",//9
-        "Luke Skywalker",//1
-        "Leia Organa",//2
-        "r2d2",//6
-      ],
-    },
-    { //14
-      name: "Boba Fett",
-      preferences: [
-        "Jabbathe Hutt",//15
-        "Lando Calrissian",//13
-        "Darth Vader",//11
-        "Han Solo",//3
-        "c3po",// 7
-      ],
-    },
-    { //15
-      name: "Jabbathe Hutt",
-      preferences: [
-        "Boba Fett",//14
-        "Leia Organa",//2
-        "Han Solo",// 3
-        "Darth Vader",//11
-        "Luke Skywalker",//1
-      ],
-    },
-    { //16
-      name: "Jek Porkins",
-      preferences: [
-        "Luke Skywalker",//1
-        "Admiral Ackbar",// 10
-        "Han Solo",//3
-        "Leia Organa",//2
-        "Mon Mothma",//12
-      ],
-    },
-  ];
+  // const students = [
+  //   {
+  //     //1
+  //     name: "Luke Skywalker",
+  //     preferences: [
+  //       "Master Yoda", //4
+  //       "Leia Organa",//2
+  //       "Han Solo",//3
+  //       "Obiwan Kenobi",//5
+  //       "R2D2",//6
+  //     ],
+  //   },
+  //   { //2
+  //     name: "Leia Organa",
+  //     preferences: ["Han Solo", "C3PO", "Wicket", "Luke Skywalker", "Chewbacca"],
+  //   },
+  //   { //3
+  //     name: "Han Solo",
+  //     preferences: [
+  //       "Chewbacca",//9
+  //       "Leia Organa",//2
+  //       "Luke Skywalker",//1
+  //       "Lando Calrissian",//13
+  //       "Jek Porkins",//16
+  //     ],
+  //   },
+  //   { //4
+  //     name: "Master Yoda",
+  //     preferences: [
+  //       "Luke Skywalker",//1
+  //       "Obiwan Kenobi",//5
+  //       "Leia Organa",//2
+  //       "Mon Mothma",//12
+  //       "Wicket",//8
+  //     ],
+  //   },
+  //   {   //5
+  //     name: "ObiWan Kenobi",
+  //     preferences: [
+  //       "Luke Skywalker",//1
+  //       "Master Yoda",//4
+  //       "Leia Organa",//2
+  //       "r2d2",//6
+  //       "Admiral Ackbar",//10
+  //     ],
+  //   },
+  //   { //6
+  //     name: "r2d2",
+  //     preferences: [
+  //       "c3po",//7
+  //       "Luke Skywalker",//1
+  //       "Leia Organa",//2
+  //       "Han Solo",//3
+  //       "Master Yoda",//4
+  //     ],
+  //   },
+  //   { //7
+  //     name: "c3po",
+  //     preferences: 
+  //     ["r2d2", //6
+  //     "Luke Skywalker", //1
+  //     "Han Solo", //3
+  //     "Wicket", //8
+  //     "Chewbacca"],//9
+  //   },
+  //   { //8
+  //     name: "Wicket",
+  //     preferences: [
+  //       "Chewbacca",//9
+  //       "Leia Organa",//2
+  //       "Luke Skywalker",//1
+  //       "Han Solo",//3
+  //       "r2d2",// 6
+  //     ],
+  //   },
+  //   {   //9
+  //     name: "Chewbacca",
+  //     preferences: [
+  //       "Han Solo",//3
+  //       "Luke Skywalker",//1
+  //       "Leia Organa",//  2
+  //       "c3po",// 7
+  //       "Wicket",//8
+  //     ],
+  //   },
+  //   { //10
+  //     name: "Admiral Ackbar",
+  //     preferences: [
+  //       "Mon Mothma",//12
+  //       "Leia Organa",//2
+  //       "Luke Skywalker",//1
+  //       "Han Solo",//3
+  //       "Master Yoda",//  4
+  //     ],
+  //   },
+  //   { //11
+  //     name: "Darth Vader",
+  //     preferences: [
+  //       "Luke Skywalker",//1
+  //       "Leia Organa",//2
+  //       "Master Yoda",//4
+  //       "Mon Mothma",//12
+  //       "Admiral Ackbar",// 10
+  //     ],
+  //   },
+  //   { //12
+  //     name: "Mon Mothma",
+  //     preferences: [
+  //       "Admiral Ackbar",//10
+  //       "Leia Organa",//2
+  //       "Master Yoda",//4
+  //       "Obiwan Kenobi",  //5
+  //       "c3po",//7
+  //     ],
+  //   },
+  //   { //13
+  //     name: "Lando Calrissian",
+  //     preferences: [
+  //       "Han Solo",//3
+  //       "Chewbacca",//9
+  //       "Luke Skywalker",//1
+  //       "Leia Organa",//2
+  //       "r2d2",//6
+  //     ],
+  //   },
+  //   { //14
+  //     name: "Boba Fett",
+  //     preferences: [
+  //       "Jabbathe Hutt",//15
+  //       "Lando Calrissian",//13
+  //       "Darth Vader",//11
+  //       "Han Solo",//3
+  //       "c3po",// 7
+  //     ],
+  //   },
+  //   { //15
+  //     name: "Jabbathe Hutt",
+  //     preferences: [
+  //       "Boba Fett",//14
+  //       "Leia Organa",//2
+  //       "Han Solo",// 3
+  //       "Darth Vader",//11
+  //       "Luke Skywalker",//1
+  //     ],
+  //   },
+  //   { //16
+  //     name: "Jek Porkins",
+  //     preferences: [
+  //       "Luke Skywalker",//1
+  //       "Admiral Ackbar",// 10
+  //       "Han Solo",//3
+  //       "Leia Organa",//2
+  //       "Mon Mothma",//12
+  //     ],
+  //   },
+  // ];
   
   // Form teams based on preferences
   const teams = formTeams(students);
