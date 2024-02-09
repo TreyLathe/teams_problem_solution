@@ -1,31 +1,10 @@
-<<<<<<< HEAD
-const { user, project } = require('../../models');
-const sequelize = require('sequelize');
-const router = require('express').Router();
-
-router.get('/', async (req, res) => {
-  try {
-    const userData = await user.findAll({
-      attributes: { exclude: ['password'] },
-      include: [{ model: project }],
-    });
-
-    const users = userData.map((user) => user.get({ plain: true }));
-
-    res.render('homepage', {
-      users,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-module.exports = router;
-=======
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+
+
+//add a new user
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -41,6 +20,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//login a user
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -73,6 +53,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//logout a user
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -84,4 +65,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
->>>>>>> 42967ba851be3c447591bd17f8a100b6254a6e88
