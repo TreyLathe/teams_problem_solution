@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+<div class="course-card">
+    <div class="course-card__header">
+   {{#if course.image}}
+        <img src="{{course.image}}" alt="{{course.title}}">
+    {{else}}
+        <img src="/images/default-course.png" alt="{{course.title}}">
+    {{/if}}
+    </div>
+    <div class="course-card__body">
+        <h2>{{course.title}}</h2>
+        <p>{{course.description}}</p>
+    </div>
+    <div class="course-card__footer">
+        <a href="/courses/{{course.id}}" class="btn btn-primary">View Course</a>
+    </div>
+</div>
+=======
 <div class="row">
     <div class="col-auto">
         <h2>Welcome, {{name}}!</h2>
@@ -46,3 +64,4 @@
 </div>
 
 <script src="./js/course.js"></script>
+>>>>>>> 42967ba851be3c447591bd17f8a100b6254a6e88
