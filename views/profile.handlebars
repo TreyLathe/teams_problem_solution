@@ -6,16 +6,20 @@
 
 <div class="row mt-4">
     <div class="col-md-6">
-        <h3>Create a New Blog:</h3> 
+        <h3>Create a New Course:</h3>
 
-        <form class="form new-blog-form">
+        <form class="form new-project-form">
             <div class="form-group">
-                <label for="blog-name">Blog name:</label>
-                <input class="form-input" type="text" id="blog-name" name="blog-name" />
+                <label for="project-name">Course name:</label>
+                <input class="form-input" type="text" id="project-name" name="project-name" />
             </div>
+            {{!-- <div class="form-group">
+                <label for="project-funding">Placeholder:</label>
+                <input class="form-input" type="text" id="project-funding" name="project-funding" />
+            </div> --}}
             <div class="form-group">
-                <label for="blog-desc">content:</label>
-                <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
+                <label for="project-desc">Description:</label>
+                <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Create</button>
@@ -23,17 +27,17 @@
         </form>
     </div>
 
-    {{#if blogs.length}}
-    <div class="col-md-6 blog-list">
-        <h3>Current Blogs:</h3>
+    {{#if courses.length}}
+    <div class="col-md-6 project-list">
+        <h3>Current Projects:</h3>
 
-        {{#each blogs as |blog|}}
+        {{#each courses as |course|}}
         <div class="row mb-2">
             <div class="col-md-8">
-                <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+                <h4><a href="/project/{{course.id}}">{{course.classname}}</a></h4>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+                <button class="btn btn-sm btn-danger" data-id="{{course.id}}">DELETE</button>
             </div>
         </div>
         {{/each}}
