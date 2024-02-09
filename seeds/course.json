@@ -1,14 +1,17 @@
 
 [
     {   "classname": "The Force",
-        "description": "Understanding what the force is and how it can be used "
+        "description": "Understanding what the force is and how it can be used ",
+        "user_id": 1
      }, 
 
      {  "classname": "Space Vehicle Physics", 
-        "description": "Understanding how vehicles behave in space"
+        "description": "Understanding how vehicles behave in space",
+        "user_id": 1
     },
 
     {  "classname": "Imperial History", 
-        "description": "A survey of the history of the Empire"
+        "description": "A survey of the history of the Empire",
+        "user_id": 2
     }
 ]
