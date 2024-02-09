@@ -9,6 +9,12 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// app.get("/", (req, res) => {
+
+//   res.render("homepage.handlebars");
+
+// });
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -24,6 +30,7 @@ const sess = {
     db: sequelize
   })
 };
+
 
 app.use(session(sess));
 
