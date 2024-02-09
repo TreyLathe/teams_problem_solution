@@ -2,6 +2,28 @@ const router = require('express').Router();
 const { Course } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const courseData = await Course.update(req.body, {
+      where: {
+        id: req.params.id,
+        //user_id: req.session.user_id,
+      },
+    });
+
+    if (!courseData) {
+      res.status(404).json({ message: 'No course found with this id!' });
+      return;
+    }
+
+    res.status(200).json(courseData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//creating a new course
 router.post('/', withAuth, async (req, res) => {
   try {
     const newCourse= await Course.create({
@@ -15,6 +37,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+//deleting a course
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const courseData = await Course.destroy({
