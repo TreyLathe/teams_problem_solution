@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Groups extends Model {}
 
-Group.init(
+Groups.init(
   {
     group_id: {
       type: DataTypes.INTEGER,
