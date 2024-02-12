@@ -1,5 +1,11 @@
-const newFormHandler = async (event) => {
-  event.preventDefault();
+// Purpose: To handle the course page and its functionality
+// get the course name and id from the api
+// get all the students in the course
+const getCourseDetails = async (courseId) => {
+  try {
+    // Get course details from the API
+    const courseResponse = await fetch(`/api/courses/${courseId}`);
+    const courseData = await courseResponse.json();
 
   const classname = document.querySelector('#project-name').value.trim();
   const description = document.querySelector('#project-desc').value.trim();

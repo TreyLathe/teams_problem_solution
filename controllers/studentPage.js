@@ -45,7 +45,7 @@ router.get("/student/:id", withAuth, async (req, res) => {
     });
 
     const student = studentData.get({ plain: true });
-
+    console.log(student);
     res.render("student", {
       ...student,
       logged_in: req.session.logged_in,
