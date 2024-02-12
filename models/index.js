@@ -1,14 +1,14 @@
-const Student = require('./Student');
-const Course = require('./Course');
-const Groups = require('./Groups');
-const StudentCourse = require('./StudentCourse');
-const User = require('./User');
+const Student = require('./Student.js');
+const Course = require('./Course.js');
+const Group_ = require('./Groups.js');
+const StudentCourse = require('./StudentCourse.js');
+const User = require('./User.js');
 
-Student.hasOne(Groups, {
+Student.hasOne(Group_, {
     foreignKey: 'student_id',
      });
 
-Course.hasOne(Groups, {
+Course.hasOne(Group_, {
     foreignKey: 'course_id',
     });
 
@@ -17,6 +17,14 @@ User.hasMany(Course, {
     });
 
 Course.belongsTo(User, {
+    foreignKey: 'user_id',
+    });
+
+User.hasMany(Student, {   //bb added this
+    foreignKey: 'user_id',  
+    });
+
+Student.belongsTo(User, { //bb added this
     foreignKey: 'user_id',
     });
 
@@ -41,5 +49,5 @@ StudentCourse.belongsTo(Course, {
 
 
 
-module.exports = { User, Student, Course, Groups, StudentCourse };
+module.exports = { User, Student, Course, Group_, StudentCourse };
 

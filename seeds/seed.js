@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection.js');
-const { User, Student, Course, Groups, StudentCourse } = require('../models');
+const { User, Student, Course, Group_, StudentCourse } = require('../models');
 
 const studentData = require('./students.json');
 const classData = require('./course.json');
@@ -25,7 +25,7 @@ const seedDatabase = async () => {
         returning: true,
       });
 
-    await Groups.bulkCreate(groupData, {
+    await Group_.bulkCreate(groupData, {
         individualHooks: true,
         returning: true,
       }); 
@@ -34,12 +34,6 @@ const seedDatabase = async () => {
         individualHooks: true,
         returning: true,
       });
-
-    await User.bulkCreate(userData, {
-      individualHooks: true,
-      returning: true,
-    });
-  
   
     process.exit(0);
   };
