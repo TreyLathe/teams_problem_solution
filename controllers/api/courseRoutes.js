@@ -8,7 +8,7 @@ router.put('/:id', withAuth, async (req, res) => {
     const courseData = await Course.update(req.body, {
       where: {
         id: req.params.id,
-        //user_id: req.session.user_id,
+        user_id: req.session.user_id,
       },
     });
 
@@ -27,8 +27,8 @@ router.put('/:id', withAuth, async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const newCourse= await Course.create({
-      ...req.body //,
-      //user_id: req.session.user_id,
+      ...req.body,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(newCourse);
@@ -43,7 +43,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     const courseData = await Course.destroy({
       where: {
         id: req.params.id,
-        //user_id: req.session.user_id,
+        user_id: req.session.user_id,
       },
     });
 

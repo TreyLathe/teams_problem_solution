@@ -1,23 +1,36 @@
 
 const router = require("express").Router();
-const { Student, Course } = require("../models");
+const  {Student, Course, User, Group_} = require("../models");
 const withAuth = require("../utils/auth");
 
 // Use withAuth middleware to prevent access to route
 //get all students
-router.get("/student", withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const studentData = await Student.findByPk(req.session.id, {
+    const studentData = await Student.findAll({
       attributes: { exclude: ["password"] },
-      include: [{ model: Course }], 
+      include: [
+      {
+          model: User,
+          attributes: ["name"],
+        },
+      // //   {
+      // //     model: Course,
+      // //     attributes: ["title", "description"],
+      // //   },
+      // //   {
+      // //     model: Group_,
+      // //     attributes: ["group_name"],
+      // //   },
+       ],
     });
-
-    const students = studentData.get({ plain: true });
-
+   console.log(studentData);
+    const students = studentData.map((student) => student.get({ plain: true}));
+  
     res.render("student", {
-      ...students, 
-      logged_in: true,
+      students,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -32,10 +45,10 @@ router.get("/student/:id", withAuth, async (req, res) => {
     });
 
     const student = studentData.get({ plain: true });
-
+    console.log(student);
     res.render("student", {
       ...student,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -45,7 +58,7 @@ router.get("/student/:id", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/student");
+    res.redirect("/courses");
     return;
   }
 
