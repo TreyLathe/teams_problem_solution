@@ -4,7 +4,7 @@ const { Course, User, Student, Group } = require("../models");
 //get all courses if logged in, otherwise redirect to login page
 router.get("/", async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all courses and JOIN with user data
     const courseData = await Course.findAll({
       include: [
         {

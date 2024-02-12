@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "name": "Sal",
@@ -15,3 +16,17 @@
     "password": "password12345"
   }
 ]
+=======
+[
+    {  
+        "name": "John Doe",   
+        "email": "warrenlathe@me.com",
+        "password": "pw123456"
+    },
+    { 
+        "name": "Jane Doe",   
+        "email": "warrenlathe@mac.com",
+        "password": "pw123456"
+    }
+]
+>>>>>>> ece877389738555d3b4e9a99142f7dd4533af79b
