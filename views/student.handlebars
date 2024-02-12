@@ -6,10 +6,12 @@
 
   </div>
   <div class="col-md-7">
-    <p>First Name: <br>{{firstname.student}}</p>
-    <p>Last Name: <br>{{lastname.student}} </p>
-    <p>
-      Course Description: <br>{{course.description}}
-    </p>
+    <p>First Name: <br>{{student.firstname}}</p>
+    <p>Last Name: <br>{{student.lastname}} </p>
+    <h3>Courses</h3>
+    {{#each student.courses as |course|}}
+      <h4>{{course.classname}}</h4>
+      <p>{{course.description}}</p>
+    {{/each}}
   </div>
 </div>
