@@ -1,67 +1,83 @@
 
     [
        { "firstname": "Luke",
-        "lastname": "Skywalker"
+        "lastname": "Skywalker",
+        "user_id" : "1"
         },
 
         { "firstname": "Leia",
-        "lastname": "Organa"
+        "lastname": "Organa",
+        "user_id" : "1"
         },
 
         { "firstname": "Han",
-        "lastname": "Solo"
+        "lastname": "Solo",
+        "user_id" : "1"
         },
 
         { "firstname": "Master",
-        "lastname": "Yoda"
+        "lastname": "Yoda",
+        "user_id" : "1"
         },
 
         { "firstname": "Obiwan",
-        "lastname": "Kenobi"
+        "lastname": "Kenobi",
+        "user_id" : "1"
         },
 
         { "firstname": "R2",
-        "lastname": "D2"
+        "lastname": "D2",
+        "user_id" : "1"
         },
 
         { "firstname": "CP",
-        "lastname": "3O"
+        "lastname": "3O",
+        "user_id" : "1"
         },
 
         { "firstname": "Wicket",
-        "lastname": "Wicket"
+        "lastname": "Wicket",
+        "user_id" : "1"
         },
 
         { "firstname": "Chew",
-        "lastname": "Bacca"
+        "lastname": "Bacca",
+        "user_id" : "2"
         },
 
         { "firstname": "Admiral",
-        "lastname": "Akbar"
+        "lastname": "Akbar",
+        "user_id" : "2"
         },
 
         { "firstname": "Darth",
-        "lastname": "Vader"
+        "lastname": "Vader",
+        "user_id" : "2"
         },
 
         { "firstname": "Mon",
-        "lastname": "Mothma"
+        "lastname": "Mothma",
+        "user_id" : "2"
         },
 
         { "firstname": "Lando",
-        "lastname": "Calrissian"
+        "lastname": "Calrissian",
+        "user_id" : "2"
         },
 
         { "firstname": "Boba",
-        "lastname": "Fett"
+        "lastname": "Fett",
+        "user_id" : "2"
         },
 
         { "firstname": "Jabbathe",
-        "lastname": "Hutt"
+        "lastname": "Hutt",
+        "user_id" : "2"
         },
 
         { "firstname": "Jek",
-        "lastname": "Porkins"
+        "lastname": "Porkins",
+        "user_id" : "2"
         }
 
     ]

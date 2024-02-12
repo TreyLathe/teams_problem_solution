@@ -19,6 +19,13 @@ Student.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    user_id: { //bb added this
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'user',
+      key: 'id',
+    },
+    },
 
   },
   {

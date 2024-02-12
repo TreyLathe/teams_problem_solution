@@ -2,42 +2,57 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const classname = document.querySelector('#project-name').value.trim();
-  //const needed_funding = document.querySelector('#project-funding').value.trim();
   const description = document.querySelector('#project-desc').value.trim();
 
   if (classname && description) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/courses`, {
       method: 'POST',
       body: JSON.stringify({ classname, description }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
+    
     if (response.ok) {
-      document.location.replace('/course');
+      document.location.replace('/courses');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create courses');
     }
   }
 };
 
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  if (event.target.hasAttribute('data-id-del')) {
+    const id = event.target.getAttribute('data-id-del');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/courses/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/course');
+      document.location.replace('/courses');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete courses');
     }
   }
 };
 
+
+const updateButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id-put')) {
+    const id = event.target.getAttribute('data-id-put');
+
+    const response = await fetch(`/api/courses/${id}`, {
+      method: 'UPDATE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/courses');
+    } else {
+      alert('Failed to update courses');
+    }
+  }
+};
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
@@ -45,3 +60,7 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+  document
+  .querySelector('.project-list')
+  .addEventListener('click', updateButtonHandler);
