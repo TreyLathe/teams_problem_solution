@@ -1,0 +1,17 @@
+<div class="row mb-4 project">
+  <div class="col-md-12">
+    <h2>
+      <a href="/project/{{student.id}}"></a>
+    </h2>
+
+  </div>
+  <div class="col-md-7">
+    <p>First Name: <br>{{student.firstname}}</p>
+    <p>Last Name: <br>{{student.lastname}} </p>
+    <h3>Courses</h3>
+    {{#each student.courses as |course|}}
+      <h4>{{course.classname}}</h4>
+      <p>{{course.description}}</p>
+    {{/each}}
+  </div>
+</div>

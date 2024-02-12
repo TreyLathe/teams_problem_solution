@@ -13,10 +13,10 @@ router.get("/student", withAuth, async (req, res) => {
       include: [{ model: Course }], 
     });
 
-    const students = studentData.get({ plain: true });
+    const student = studentData.get({ plain: true });
 
     res.render("student", {
-      ...students, 
+      student, 
       logged_in: true,
     });
   } catch (err) {
@@ -32,9 +32,9 @@ router.get("/student/:id", withAuth, async (req, res) => {
     });
 
     const student = studentData.get({ plain: true });
-
+    console.log(student);
     res.render("student", {
-      ...student,
+      student,
       logged_in: true,
     });
   } catch (err) {
