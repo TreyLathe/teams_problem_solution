@@ -8,7 +8,6 @@ router.put('/:id', withAuth, async (req, res) => {
     const groupData = await Group_.update(req.body, {
       where: {
         id: req.params.id,
-        // user_id: req.session.user_id,
       },
     });
 
@@ -28,7 +27,6 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newGroups= await Group_.create({
       ...req.body,
-    //   user_id: req.session.user_id,
     });
  console.log(newGroups);
     res.status(200).json(newGroups);
@@ -43,7 +41,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     const groupData = await Group_.destroy({
       where: {
         group_id: req.params.id,
-        // user_id: req.session.user_id,
       },
     });
 

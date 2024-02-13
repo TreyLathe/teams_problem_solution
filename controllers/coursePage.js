@@ -12,15 +12,15 @@ router.get("/", withAuth, async (req, res) => {
           model: User,
           attributes: ["name"],
         },
-        {
-          model: Student,
-          attributes: ["firstname", "lastname"],
-        },
-        {
-          model: Group_,
-          attributes: ["group_name"],
-        },
-      ],
+      //   {
+      //     model: Student,
+      //     attributes: ["firstname", "lastname"],
+      //   },
+      //   {
+      //     model: Group_,
+      //     attributes: ["group_name"],
+      //   },
+     ],
     });
 
     // Serialize data so the template can read it
@@ -39,6 +39,7 @@ router.get("/", withAuth, async (req, res) => {
       courses,
       logged_in: req.session.logged_in,
       name: user.name,
+      user_id:req.session.user_id
     });
   } catch (err) {
     res.status(500).json(err);
@@ -66,9 +67,9 @@ router.get("/course/:id", withAuth, async (req, res) => {
     });
 
     const course = courseData.get({ plain: true });
-
-    res.render("course", {
-      ...course,
+console.log(course);
+    res.render("courseId", {
+      course,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

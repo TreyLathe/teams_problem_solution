@@ -1,8 +1,18 @@
+<div class="row mb-4 project">
+    <div class="col-md-7">
+        <p>Course Title: {{course.classname}}</p>
+        <p>Course Description: {{course.description}}</p>
+    </div>
+</div>
+
 <div class="row mt-4">
     <div class="col-md-6">
-        <h3 class="subtitle">Create a New Course:</h3>
+        <h3 class="title">Create a New Course:</h3>
 
         <form class="form new-project-form">
+            <div class="form-group">
+                <input type="hidden" id="user_id" name="user_id" value={{user_id}}>
+            </div>
             <div class="form-group">
                 <label for="project-name">Course name:</label>
                 <input class="form-input" type="text" id="project-name" name="project-name" />
@@ -12,7 +22,8 @@
                 <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <a href="/courses" class="btn  m-2 button_">Cancel</a>
+                <button type="submit" class="btn m-2 button_ ">Save</button>
             </div>
         </form>
     </div>

@@ -993,8 +993,8 @@ a:hover {
 }
 
 .btn.btn-sm {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.9rem;
+    font-size: 0.55rem;
+    padding: 0.2rem 0.4rem;
 }
 
 .btn.btn-lg {
@@ -1114,8 +1114,8 @@ form {
 
 form .form-group {
     display: block;
-    width: 100%;
-    margin: 0.625rem 0;
+    width: 90%;
+    margin: 0.425rem 0;
 }
 
 form .form-input,
@@ -1136,12 +1136,12 @@ form label,
 form .form-label {
     display: inline-block;
     font-size: 1.2rem;
-    margin: 0.625rem 0 0.25rem 0.3rem;
+    margin: 0.525rem 0 0.25rem 0.3rem;
 }
 
 form .form-input {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0;
     color: #1a1a1a;
     background-color: #ffffff;
     margin: 0.625rem 0;
