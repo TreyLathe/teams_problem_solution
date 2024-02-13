@@ -1,0 +1,38 @@
+<div class="row mb-4 project">
+    <div class="col-md-12">
+        <h2>
+            <a href="/courses/{{student.id}}">{{course.classname}}</a>
+        </h2>
+    </div>
+    <div class="col-md-7">
+            <p>First Name: {{student.firstname}}</p>
+            <p>Last Name: {{student.lastname}}</p>
+            {{#each student.courses as |course|}}
+            <a href="/courses/{{course.id}}">Course Name: {{course.classname}}</a>
+    
+            {{/each}}
+  
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-5">
+        <h3 class="subtitle">Add New Student:</h3>
+
+        <form class="form new-project-form">
+            <div class="form-group">
+                <label for="student-firstname">First name:</label>
+                <input class="form-input" type="text" id="firstname" name="firstname" />
+            </div>
+            <div class="form-group">
+                <label for="student-lastname">Last name:</label>
+                <input class="form-input" id="lastname" name="lastname"></input>
+            </div>
+            <div class="form-group">
+               <a href="/students" class="btn  m-2 button_" >Cancel</a>
+             <button type="submit" class="btn m-2 button_" data-id-put="{{student.id}}">Save</button> 
+            </div>
+        </form>
+    </div>
+
+<script src="./js/addStudent.js"></script>

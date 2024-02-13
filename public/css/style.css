@@ -41,14 +41,17 @@ body{
 
 }
 
-table,
-th,
-td {
-    border: 1px solid white;
-    border-collapse: collapse;
-}
 
-th,
-td {
-    background-color: #96D4D4;
+.button_{
+    width: 100px;
+    height: 30px;
+    background: rgb(226, 226, 109);
+    padding-bottom: 3px;
+    padding-top: 3px;
+    color:white;
+    text-decoration: none;
+
+}
+.notification a:not(.button):not(.dropdown-item){
+    text-decoration: none;
 }

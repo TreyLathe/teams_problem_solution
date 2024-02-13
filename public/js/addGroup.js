@@ -7,7 +7,6 @@ const newFormHandler = async (event) => {
   const group_id = 3;
   const student_id = 2;
   const course_id = 1;
-  //const needed_funding = document.querySelector('#project-funding').value.trim();
   const project_name = document.querySelector('#projectname').value.trim();
 console.log(group_id && group_name && project_name && student_id && course_id);
   if (group_id && group_name && project_name && student_id && course_id) {

@@ -8,10 +8,9 @@ router.put('/:id', withAuth, async (req, res) => {
       const studentData = await Student.update(req.body, {
         where: {
           id: req.params.id,
-        user_id: req.session.user_id,
         },
       });
-  
+   console.log(studentData);
       if (!studentData) {
         res.status(404).json({ message: 'No student found with this id!' });
         return;

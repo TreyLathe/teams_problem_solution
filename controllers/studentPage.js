@@ -15,22 +15,23 @@ router.get("/", withAuth, async (req, res) => {
           model: User,
           attributes: ["name"],
         },
-      // //   {
-      // //     model: Course,
-      // //     attributes: ["title", "description"],
-      // //   },
-      // //   {
-      // //     model: Group_,
-      // //     attributes: ["group_name"],
-      // //   },
        ],
     });
-   console.log(studentData);
+
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+
+    // Pass serialized data and session flag into template    
     const students = studentData.map((student) => student.get({ plain: true}));
   
     res.render("student", {
       students,
       logged_in: req.session.logged_in,
+      name: user.name,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -41,13 +42,14 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/student/:id", withAuth, async (req, res) => {
   try {
     const studentData = await Student.findByPk(req.params.id, {
-      include: [{ model: Course }],
+      include: [{ model: Course,
+        attributes: ["classname", "id"],
+       }],
     });
 
     const student = studentData.get({ plain: true });
-    console.log(student);
-    res.render("student", {
-      ...student,
+    res.render("studentId", {
+      student,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -58,7 +60,7 @@ router.get("/student/:id", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/courses");
+    res.redirect("/students");
     return;
   }
 
