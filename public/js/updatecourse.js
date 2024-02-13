@@ -3,15 +3,15 @@ const updateCourse = async (event) => {
 
     
   const projectNameEl = document.querySelector('#project-name');
-  const projectname = projectNameEl.value.trim();
+  const classname = projectNameEl.value.trim();
   const id = projectNameEl.getAttribute('data-id');
-  const projectDescEl = document.querySelector('#project-desc').value.trim();
-console.log(projectname, projectDescEl, id);
+  const description = document.querySelector('#project-desc').value.trim();
+console.log(classname, description, id);
 
-if (projectname && projectDescEl) {
+if (classname && description) {
     const response = await fetch(`/api/courses/${id}`, {
       method: 'PUT',
-      body: JSON.stringify({ projectname, projectDescEl }),
+      body: JSON.stringify({ classname, description }),
       headers: {
         'Content-Type': 'application/json',
       },
