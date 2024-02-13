@@ -21,7 +21,7 @@ h1 a{
     color:#edd603;
 }
 body{
-    background-color: rgb(17, 17, 59);
+    background-color: rgb(39, 39, 80);
     color: white;
 }
 
@@ -59,4 +59,7 @@ body{
 .btn.btn-sm, .btn{
 
     margin-top: 0.5rem;
+}
+.new-project-form{
+    border-radius: 1px solid white;
 }

@@ -8,7 +8,6 @@ const newFormHandler = async (event) => {
   const student_id = 2;
   const course_id = 1;
   const project_name = document.querySelector('#projectname').value.trim();
-console.log(group_id && group_name && project_name && student_id && course_id);
   if (group_id && group_name && project_name && student_id && course_id) {
     const response = await fetch(`/api/groups`, {
       method: 'POST',
@@ -27,8 +26,8 @@ console.log(group_id && group_name && project_name && student_id && course_id);
 };
 
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  if (event.target.hasAttribute('data-id-del')) {
+    const id = event.target.getAttribute('data-id-del');
 
     const response = await fetch(`/api/groups/${id}`, {
       method: 'DELETE',

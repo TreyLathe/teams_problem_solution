@@ -5,9 +5,29 @@
 </div>
 
 <div class="row mt-4">
+
+
+    {{#if students.length}}  
+    <div class="col-md-8 project-list">
+        <h3 class="subtitle is-info has-text-link">Current Students:</h3>
+
+        {{#each students as |student|}}
+        <div class="row mb-2 table is-bordered pb-1">
+            <div class="col-md-9">
+                <h4><a href="/students/student/{{student.id}}">{{student.firstname}}, {{student.lastname}}</a></h4>
+            </div>
+            <div class="col-md-3">
+                    <a class="btn btn-sm btn-darkgrey" href="/students/student/{{student.id}}" data-id-put="{{student.id}}"><i class="fa fa-edit"></i></a>
+                    <button class="btn btn-sm btn-danger" data-id-del="{{student.id}}"><i class="fa fa-trash"></i></button>
+            
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
     <div class="col-md-4">
         <h3 class="subtitle is-info has-text-link">Add New Student:</h3>
-
+    
         <form class="form new-project-form">
             <div class="form-group">
                 <label for="firstname">First name:</label>
@@ -22,26 +42,6 @@
             </div>
         </form>
     </div>
-
-    {{#if students.length}}  
-    <div class="col-md-8 project-list">
-        <h3 class="subtitle is-info has-text-link">Current Students:</h3>
-
-        {{#each students as |student|}}
-        <div class="row mb-2 table is-bordered pb-1">
-            <div class="col-md-9">
-                <h4><a href="/students/student/{{student.id}}">{{student.firstname}}, {{student.lastname}}</a></h4>
-            </div>
-            <div class="col-md-3">
-                <a href="/students/student/{{student.id}}">
-                    <button class="btn btn-sm btn-darkgrey" data-id-put="{{student.id}}"><i class="fa fa-edit"></i></button>
-                    <a class="btn btn-sm btn-danger" data-id-del="{{student.id}}"><i class="fa fa-trash"></i></a>
-            
-            </div>
-        </div>
-        {{/each}}
-    </div>
-    {{/if}}
 </div>
 
 <script src="./js/addStudent.js"></script>
