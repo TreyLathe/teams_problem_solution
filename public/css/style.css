@@ -55,3 +55,8 @@ body{
 .notification a:not(.button):not(.dropdown-item){
     text-decoration: none;
 }
+
+.btn.btn-sm, .btn{
+
+    margin-top: 0.5rem;
+}
