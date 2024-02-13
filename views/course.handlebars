@@ -6,7 +6,7 @@
 
 <div class="row mt-4">
     <div class="col-md-6">
-        <h3 class="subtitle">Create a New Course:</h3>
+        <h3 class="subtitle is-info has-text-link">Create a New Course:</h3>
 
         <form class="form new-project-form">
             <div class="form-group">
@@ -28,16 +28,16 @@
 
     {{#if courses.length}}
     <div class="col-md-6 project-list">
-        <h3 class="subtitle">Current Courses:</h3>
+        <h3 class="subtitle is-info has-text-link">Current Courses:</h3>
         {{#each courses as |course|}}
         <div class="row mb-2 table is-bordered pb-1">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <h4><a href="/courses/course/{{course.id}}">{{course.classname}}</a></h4>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="/courses/course/{{course.id}}">
-                <button class="btn btn-sm btn-primary" data-id-put="{{course.id}}">UPDATE</button></a>
-                <button class="btn btn-sm btn-danger" data-id-del="{{course.id}}">DELETE</button>
+                <button class="btn btn-sm btn-darkgrey" data-id-put="{{course.id}}"><i class="fa fa-edit"></i></button>
+                <a class="btn btn-sm btn-danger" data-id-del="{{course.id}}"><i class="fa fa-trash"></i></a>
 
             </div>
         </div>

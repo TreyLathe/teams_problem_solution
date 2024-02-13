@@ -993,8 +993,8 @@ a:hover {
 }
 
 .btn.btn-sm {
-    font-size: 0.55rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.70rem;
+    padding: 0.3rem 0.6rem;
 }
 
 .btn.btn-lg {
@@ -1141,7 +1141,7 @@ form .form-label {
 
 form .form-input {
     width: 100%;
-    padding: 0;
+    padding: 0.5rem;
     color: #1a1a1a;
     background-color: #ffffff;
     margin: 0.625rem 0;
