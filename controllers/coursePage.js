@@ -12,14 +12,6 @@ router.get("/", withAuth, async (req, res) => {
           model: User,
           attributes: ["name"],
         },
-      //   {
-      //     model: Student,
-      //     attributes: ["firstname", "lastname"],
-      //   },
-      //   {
-      //     model: Group_,
-      //     attributes: ["group_name"],
-      //   },
      ],
     });
 

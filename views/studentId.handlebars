@@ -11,7 +11,7 @@
         <p><strong>Last Name</strong>: {{student.lastname}}</p>
         <p><strong>Enrolled Courses:</strong><br> 
         {{#each student.courses as |course|}}
-        <a href="/courses/course/{{course.id}}">{{course.classname}}{{#each course.studentcourse as |course|}}{{course}}{{/each}}</a></p>
+        <a href="/courses/course/{{course.id}}">{{course.classname}}</a></p>
         {{/each}}
     </div>
 
