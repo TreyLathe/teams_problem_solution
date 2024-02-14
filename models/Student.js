@@ -19,7 +19,7 @@ Student.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: { //bb added this
+    user_id: { 
     type: DataTypes.INTEGER,
     references: {
       model: 'user',

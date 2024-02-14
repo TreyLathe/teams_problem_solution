@@ -4,29 +4,28 @@
             <a href="/courses/{{student.id}}">{{course.classname}}</a>
         </h2>
     </div>
-    <div class="col-md-7">
-            <p><strong>First Name</strong>: {{student.firstname}}</p>
-            <p><strong>Last Name</strong>: {{student.lastname}}</p>
-            <p><strong>Enrolled Courses:</strong><br> 
-            {{#each student.courses as |course|}}
-            <a href="/courses/course/{{course.id}}">{{course.classname}}</a></p>
-            {{/each}}
-  
-    </div>
 </div>
-
 <div class="row mt-4">
+    <div class="col-md-7">
+        <p><strong>First Name</strong>: {{student.firstname}}</p>
+        <p><strong>Last Name</strong>: {{student.lastname}}</p>
+        <p><strong>Enrolled Courses:</strong><br> 
+        {{#each student.courses as |course|}}
+        <a href="/courses/course/{{course.id}}">{{course.classname}}{{#each course.studentcourse as |course|}}{{course}}{{/each}}</a></p>
+        {{/each}}
+    </div>
+
     <div class="col-md-5">
-        <h3 class="subtitle is-info has-text-link">Modify Student:</h3>
+        <h3 class="subtitle is-info has-text-link has-text-centered">Modify Student:</h3>
 
         <form class="form update-student-form">
             <div class="form-group">
-                <label for="student-firstname">First name:</label>
-                <input class="form-input" type="text" id="firstname" data-id="{{student.id}}" name="firstname" />
+                <label for="firstname">First name:</label>
+                <input class="form-input" type="text" id="firstname" data-id="{{student.id}}" name="firstname">
             </div>
             <div class="form-group">
-                <label for="student-lastname">Last name:</label>
-                <input class="form-input" id="lastname" name="lastname"></input>
+                <label for="lastname">Last name:</label>
+                <input class="form-input" id="lastname" name="lastname">
             </div>
             <div class="form-group">
                <a href="/students" class="btn  m-2 button_" >Cancel</a>
@@ -34,5 +33,6 @@
             </div>
         </form>
     </div>
+</div>
 
 <script src="/js/updateStudent.js"></script>

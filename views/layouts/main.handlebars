@@ -12,70 +12,62 @@
 </head>
 
 <body>
-  {{!-- <div class="flex-column justify-space-around"> --}}
-<section class="hero is-link">
-  <div class="hero-body">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="icon"></span>
-        <a href="/" class="title">Course Management</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        {{!-- <a href="/courses">courses</a> | --}}
-        <a href="/">Home</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-  </div>
-</section>
-
-    <main>
-
-<section class="hero is-fullheight">
-  <div class="hero-body">
-<div class="tile is-ancestor">
-  <div class="tile is-3 is-vertical is-parent ">
-    <div class="tile is-child box notification is-success">
-      <article>
-        <p><a href="/students" class="button is-warning">Manage Students</a></p>
-        <hr>
-        <p><a href="/courses" class="button is-warning">Manage Courses</a></p>
-        <hr>
-        <p><a href="/groups" class="button is-warning">Manage Groups</a></p>
-
-      </article>
+  <section class="hero is-link">
+    <div class="hero-body">
+      <header class="display-flex justify-space-between align-center p-2">
+        <h1>
+          <span role="img" aria-label="icon"></span>
+          <a href="/" class="title">Course Management</a>
+        </h1>
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+          <a href="/">Home</a> |
+          <button class="no-button" id="logout">logout</button>
+          {{else}}
+          <a href="/login">login</a>
+          {{/if}}
+        </nav>
+      </header>
     </div>
-  </div>
-  <div class="tile is-parent is-9 is-vertical">
-    <div class="tile is-child box notification is-success">
-      <!-- Render the sub layout -->
-      <h2 class="title is-info has-text-link has-text-centered"> Welcome To Course Management</h2>
-      <article>
-          {{{ body }}}
-      </article>
-    </div>
-  </div>
-</div>
+  </section>
 
+  <main>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="tile is-ancestor">
+          <div class="tile is-3 is-vertical is-parent ">
+            <div class="tile is-child box notification is-success">
+              <article>
+                <p><a href="/students" class="button is-warning">Manage Students</a></p>
+                <hr>
+                <p><a href="/courses" class="button is-warning">Manage Courses</a></p>
+                <hr>
+                <p><a href="/groups" class="button is-warning">Manage Groups</a></p>
 
-</div>
-</section>
-    </main>
-<footer>
-<section class="hero is-link">
-  <div class="hero-body">
-    <p class="has-text-centered">&copy; 2024 T.I.B Student Management software inc</p>
-  </div>
-</div>
-
-</footer>
-  {{!-- </div> --}}
-
+              </article>
+            </div>
+          </div>
+          <div class="tile is-parent is-9 is-vertical">
+            <div class="tile is-child box notification is-success">
+              <!-- Render the sub layout -->
+              <h2 class="title is-info has-text-link has-text-centered"> Welcome To Course Management</h2>
+              <article>
+                  {{{ body }}}
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section class="hero is-link">
+      <div class="hero-body">
+        <p class="has-text-centered">&copy; 2024 T.I.B Student Management software inc</p>
+      </div>
+    </section>
+  </footer>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="js/logout.js"></script>

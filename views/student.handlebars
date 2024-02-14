@@ -5,16 +5,14 @@
 </div>
 
 <div class="row mt-4">
-
-
-    {{#if students.length}}  
+    {{#if students.length}} 
     <div class="col-md-8 project-list">
-        <h3 class="subtitle is-info has-text-link">Current Students:</h3>
+        <h3 class="subtitle is-info has-text-link has-text-centered">Current Students:</h3>
 
         {{#each students as |student|}}
-        <div class="row mb-2 table is-bordered pb-1">
+        <div class="row mb-2 table is-bordered pb-1 pt-2 pb-0">
             <div class="col-md-9">
-                <h4><a href="/students/student/{{student.id}}">{{student.firstname}}, {{student.lastname}}</a></h4>
+                <h4><a href="/students/student/{{student.id}}" class="">{{student.firstname}}, {{student.lastname}}</a></h4>
             </div>
             <div class="col-md-3">
                     <a class="btn btn-sm btn-darkgrey" href="/students/student/{{student.id}}" data-id-put="{{student.id}}"><i class="fa fa-edit"></i></a>
@@ -26,16 +24,16 @@
     </div>
     {{/if}}
     <div class="col-md-4">
-        <h3 class="subtitle is-info has-text-link">Add New Student:</h3>
+        <h3 class="subtitle is-info has-text-link has-text-centered">Add New Student:</h3>
     
         <form class="form new-project-form">
             <div class="form-group">
                 <label for="firstname">First name:</label>
-                <input class="form-input" type="text" id="firstname" name="firstname" />
+                <input class="form-input" type="text" id="firstname" name="firstname">
             </div>
             <div class="form-group">
                 <label for="lastname">Last name:</label>
-                <input class="form-input" id="lastname" name="lastname"></input>
+                <input class="form-input" id="lastname" name="lastname">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>

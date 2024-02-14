@@ -42,12 +42,18 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/student/:id", withAuth, async (req, res) => {
   try {
     const studentData = await Student.findByPk(req.params.id, {
-      include: [{ model: Course,
+      include: [
+        { model: Course,
         attributes: ["classname", "id"],
-       }],
+       },
+        { model: User,
+        attributes: ["id"],
+       },
+      ],
     });
 
     const student = studentData.get({ plain: true });
+    console.log(student);
     res.render("studentId", {
       student,
       logged_in: req.session.logged_in,
