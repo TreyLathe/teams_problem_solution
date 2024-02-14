@@ -20,11 +20,11 @@ Course.belongsTo(User, {
     foreignKey: 'user_id',
     });
 
-User.hasMany(Student, {   //bb added this
+User.hasMany(Student, {  
     foreignKey: 'user_id',  
     });
 
-Student.belongsTo(User, { //bb added this
+Student.belongsTo(User, { 
     foreignKey: 'user_id',
     });
 

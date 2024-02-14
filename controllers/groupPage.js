@@ -9,21 +9,6 @@ router.get("/", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const groupData = await Group_.findAll({
-    //   attributes: { exclude: ["password"] },
-    //   include: [
-    //   {
-    //       model: User,
-    //       attributes: ["name"],
-    //     },
-    //     {
-    //       model: Course,
-    //       attributes: ["title", "description"],
-    //     },
-    //     {
-    //       model: Student,
-    //       attributes: ["firstname", "lastname"],
-    //     },
-    //    ],
     });
    console.log(groupData);
     const groups = groupData.map((student) => student.get({ plain: true}));

@@ -5,8 +5,26 @@
 </div>
 
 <div class="row mt-4">
+    {{#if courses.length}}
+    <div class="col-md-6 project-list">
+        <h3 class="subtitle is-info has-text-link has-text-centered">Current Courses:</h3>
+        {{#each courses as |course|}}
+        <div class="row mb-2 table is-bordered pb-1 pb-1 pt-2 pb-0">
+            <div class="col-md-9">
+                <h4><a href="/courses/course/{{course.id}}">{{course.classname}}</a></h4>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-sm btn-darkgrey" href="/courses/course/{{course.id}}" data-id-put="{{course.id}}"><i
+                        class="fa fa-edit"></i></a>
+                <button class="btn btn-sm btn-danger" data-id-del="{{course.id}}"><i class="fa fa-trash"></i></button>
+    
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
     <div class="col-md-6">
-        <h3 class="subtitle is-info has-text-link">Create a New Course:</h3>
+        <h3 class="subtitle is-info has-text-link has-text-centered">Create a New Course:</h3>
 
         <form class="form new-project-form">
             <div class="form-group">
@@ -25,24 +43,6 @@
             </div>
         </form>
     </div>
-
-    {{#if courses.length}}
-    <div class="col-md-6 project-list">
-        <h3 class="subtitle is-info has-text-link">Current Courses:</h3>
-        {{#each courses as |course|}}
-        <div class="row mb-2 table is-bordered pb-1">
-            <div class="col-md-9">
-                <h4><a href="/courses/course/{{course.id}}">{{course.classname}}</a></h4>
-            </div>
-            <div class="col-md-3">
-                <a class="btn btn-sm btn-darkgrey" href="/courses/course/{{course.id}}" data-id-put="{{course.id}}"><i class="fa fa-edit"></i></a>
-                <button class="btn btn-sm btn-danger" data-id-del="{{course.id}}"><i class="fa fa-trash"></i></button>
-
-            </div>
-        </div>
-        {{/each}}
-    </div>
-    {{/if}}
 </div>
 
 <script src="./js/course.js"></script>
