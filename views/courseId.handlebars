@@ -1,7 +1,14 @@
 <div class="row mb-4 project">
     <div class="col-md-6">
-        <p><strong>Course Title:</strong><br> {{course.classname}}</p>
-        <p><strong>Course Description:</strong><br> {{course.description}}</p>
+        <p><strong>Course Title:</strong><br> {{course.classname}}</p><br>
+        <p><strong>Course Description:</strong><br> {{course.description}}</p><br>
+        <div>
+            <p><strong>Enrolled Students:</strong><br>
+            {{!-- {{#each student_id.studentcourse as |student|}}
+        <a href="/students/student/{{student.id}}">{{studentcourse.student_id}}</a></p><br>
+        {{/each}} --}}
+        </div>   
+    
     </div>
 </div>
 
