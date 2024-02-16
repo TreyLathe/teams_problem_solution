@@ -3,10 +3,10 @@
         <p><strong>Course Title:</strong><br> {{course.classname}}</p><br>
         <p><strong>Course Description:</strong><br> {{course.description}}</p><br>
         <div>
-            <p><strong>Enrolled Students:</strong><br>
-            {{!-- {{#each student_id.studentcourse as |student|}}
-        <a href="/students/student/{{student.id}}">{{studentcourse.student_id}}</a></p><br>
-        {{/each}} --}}
+            <p><strong>Enrolled Students:</strong><br></p>
+            {{#each enrolledStudents as |student|}}
+        <a href="/students/student/{{student.id}}">{{student.firstname}} {{student.lastname}}</a><br>
+        {{/each}}
         </div>   
     
     </div>
